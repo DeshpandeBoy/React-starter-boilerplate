@@ -1,4 +1,4 @@
-React Starter Pack without Redux,Text and Eslint features.
+React Starter Pack without Redux,Test and Eslint features.
 
 Install:
 Clone it and npm install in same directory.
