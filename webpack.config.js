@@ -44,7 +44,7 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"), //server to show which folder to be served.
     compress: true,
     stats: "errors-only", //show only errors in the terminal can use quite: true but it do not show errors or warning so this is used.
-    open: true, //open in new window in dev mode.
+    open: false, //open in new window in dev mode.
     hot: true //Hot Module Replacement is enabled.
   },
   plugins: [
