@@ -20,6 +20,12 @@ module.exports = {
           use: ["css-loader?sourceMap", "sass-loader?sourceMap"]
         })
       },
+      {
+        enforce: "pre",
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      },
       { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" }, //js and jsx file types
       {
         test: /\.(gif|png|jpe?g|svg)$/i, //image format files
