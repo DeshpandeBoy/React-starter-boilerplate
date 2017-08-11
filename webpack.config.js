@@ -24,7 +24,7 @@ module.exports = {
         enforce: "pre",
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: "eslint-loader",
+        loader: "eslint-loader"
       },
       { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" }, //js and jsx file types
       {
