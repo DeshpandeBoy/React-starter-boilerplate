@@ -51,7 +51,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Boilerplate",
       minify: {
-      collapseWhitespace: true
+        collapseWhitespace: true
       },
       hash: true,
       template: "./src/index.html"

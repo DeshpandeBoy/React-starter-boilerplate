@@ -1,5 +1,11 @@
 {
-  "plugins": ["prettier"],
+  "extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import",
+        "prettier"
+    ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -11,5 +17,19 @@
     "es6": true,
     "browser": true,
     "node": true
-  }
+  },
+  "rules": {
+        // enable additional rules
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "windows"],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"],
+
+        // override default options for rules from base configurations
+        "comma-dangle": ["error", "always"],
+        "no-cond-assign": ["error", "always"],
+
+        // disable rules from base configurations
+        "no-console": "off"
+    }
 }
