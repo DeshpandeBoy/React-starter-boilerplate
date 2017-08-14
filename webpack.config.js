@@ -62,7 +62,6 @@ module.exports = {
       allChunks: true
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new CleanWebpackPlugin(["dist"]),
     new BrowserSyncPlugin(
       {
         host: "localhost",
@@ -84,7 +83,8 @@ module.exports = {
         reload: false
       }
     ),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new CleanWebpackPlugin(["dist"])
   ],
   devtool: "source-map"
 };
