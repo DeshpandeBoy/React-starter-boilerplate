@@ -5,20 +5,37 @@ const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
+var isProd = process.env.NODE_ENV === "production"; //true or false
+var cssDev = [{
+  loader: 'style-loader',
+  options: {
+    sourceMap: true,
+    convertToAbsoluteUrls: true
+  }
+}, "css-loader", "sass-loader"];
+var cssProd = ExtractTextPlugin.extract({
+  fallback: "style-loader",
+  use: ["css-loader?sourceMap", "sass-loader?sourceMap"],
+  publicPath: "/dist"
+});
+
+var cssConfig = isProd ? cssProd : cssDev;
+
 module.exports = {
   entry: "./src/app.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js"
   },
+  resolve: {
+    extensions: [".js", ".jsx", ".css"], //An empty string is no longer required.
+    modules: ["node_modules"]
+  },
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/, // scss file types
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader?sourceMap", "sass-loader?sourceMap"]
-        })
+        test: /\.scss$/, // scss file types
+        use: cssConfig
       },
       {
         enforce: "pre",
@@ -26,7 +43,11 @@ module.exports = {
         exclude: /node_modules/,
         loader: "eslint-loader"
       },
-      { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" }, //js and jsx file types
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      }, //js and jsx file types
       {
         test: /\.(gif|png|jpe?g|svg)$/i, //image format files
         loaders: [
@@ -58,7 +79,7 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: "bundle.css",
-      disable: false,
+      disable: !isProd,
       allChunks: true
     }),
     new webpack.HotModuleReplacementPlugin(),
