@@ -22,7 +22,7 @@ var cssProd = ExtractTextPlugin.extract({
 var cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
-  entry: "./src/app.jsx",
+  entry: "./src/index.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js"
