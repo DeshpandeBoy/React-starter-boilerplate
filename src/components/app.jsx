@@ -1,94 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 
-const list = [
-  {
-    title: "React",
-    url: "https://facebook.github.io/react/",
-    author: "Jordan Walke",
-    num_comments: 3,
-    points: 4,
-    objectID: 0
-  },
-  {
-    title: "Redux",
-    url: "https://github.com/reactjs/redux",
-    author: "Dan Abramov, Andrew Clark",
-    num_comments: 2,
-    points: 5,
-    objectID: 1
-  }
-];
-
-const isSearched = searchTerm => item =>
-  !searchTerm || item.title.toLowerCase().includes(searchTerm.toLowerCase());
-
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { value: "" };
 
-    this.state = {
-      list,
-      searchTerm: "",
-      isToggleOn: true
-    };
-    this.onSearchChange = this.onSearchChange.bind(this);
-    this.onDismiss = this.onDismiss.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  onDismiss(id) {
-    const updatedList = this.state.list.filter(item => item.objectID !== id);
-    this.setState({ list: updatedList });
+  handleChange(event) {
+    this.setState({ value: event.target.value });
   }
 
-  onSearchChange(event) {
-    this.setState({ searchTerm: event.target.value });
-  }
-
-  handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
+  handleSubmit(event) {
+    alert("A name was submitted: " + this.state.value);
+    event.preventDefault();
   }
 
   render() {
-    const { searchTerm } = this.state;
     return (
-      <div className="App">
-        <form>
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="text">
+          Name:
           <input
             type="text"
-            value={searchTerm}
-            onChange={this.onSearchChange}
+            value={this.state.value}
+            onChange={this.handleChange}
           />
-        </form>
-        {this.state.list.filter(isSearched(searchTerm)).map(item =>
-          <div key={item.objectID}>
-            <span>
-              <a href={item.url}>
-                {item.title}
-              </a>
-            </span>
-            <span>
-              {item.author}
-            </span>
-            <span>
-              {item.num_comments}
-            </span>
-            <span>
-              {item.points}
-            </span>
-            <span>
-              <button
-                onClick={() => this.onDismiss(item.objectID)}
-                type="button"
-              >
-                Dismiss
-              </button>
-            </span>
-          </div>
-        )}
-      </div>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
     );
   }
 }
