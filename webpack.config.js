@@ -4,15 +4,21 @@ const path = require("path");
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const glob = require("glob");
+const PurifyCSSPlugin = require("purifycss-webpack");
 
 var isProd = process.env.NODE_ENV === "production"; //true or false
-var cssDev = [{
-  loader: 'style-loader',
-  options: {
-    sourceMap: true,
-    convertToAbsoluteUrls: true
-  }
-}, "css-loader", "sass-loader"];
+var cssDev = [
+  {
+    loader: "style-loader",
+    options: {
+      sourceMap: true,
+      convertToAbsoluteUrls: true
+    }
+  },
+  "css-loader",
+  "sass-loader"
+];
 var cssProd = ExtractTextPlugin.extract({
   fallback: "style-loader",
   use: ["css-loader?sourceMap", "sass-loader?sourceMap"],
@@ -81,6 +87,9 @@ module.exports = {
       filename: "bundle.css",
       disable: !isProd,
       allChunks: true
+    }),
+    new PurifyCSSPlugin({
+      paths: glob.sync(path.join(__dirname, 'src/*.html')),
     }),
     new webpack.HotModuleReplacementPlugin(),
     new BrowserSyncPlugin(
