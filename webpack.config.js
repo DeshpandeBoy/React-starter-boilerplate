@@ -72,7 +72,8 @@ module.exports = {
     compress: true,
     stats: "errors-only", //show only errors in the terminal can use quite: true but it do not show errors or warning so this is used.
     open: false, //open in new window in dev mode.
-    hot: true //Hot Module Replacement is enabled.
+    hot: true, //Hot Module Replacement is enabled.
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebpackPlugin({

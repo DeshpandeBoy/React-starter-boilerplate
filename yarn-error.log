@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Ryzen_vega\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D eslint-plugin-flowtype
+  C:\Program Files\nodejs\node.exe C:\Users\Ryzen_vega\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-router-dom
 
 PATH: 
-  C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Brackets\command;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Ryzen_vega\AppData\Local\Microsoft\WindowsApps;C:\Users\Ryzen_vega\AppData\Roaming\npm;C:\Users\Ryzen_vega\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code Insiders\bin
+  C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files (x86)\Brackets\command;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Users\Ryzen_vega\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Ryzen_vega\AppData\Local\Programs\Python\Python36\;C:\Users\Ryzen_vega\AppData\Local\Microsoft\WindowsApps;C:\Users\Ryzen_vega\AppData\Roaming\npm;C:\Users\Ryzen_vega\AppData\Local\GitHubDesktop\bin;C:\Program Files\Microsoft VS Code Insiders\bin;C:\Program Files\Heroku\bin
 
 Yarn version: 
   0.27.5
@@ -41,21 +41,24 @@ npm manifest:
       "clean-webpack-plugin": "^0.1.16",
       "css-loader": "^0.28.4",
       "eslint": "^4.4.1",
-      "eslint-config-shakacode": "^15.0.0",
       "eslint-loader": "^1.9.0",
+      "eslint-plugin-flowtype": "^2.35.0",
       "extract-text-webpack-plugin": "^3.0.0",
       "file-loader": "^0.11.2",
       "html-webpack-plugin": "^2.30.1",
       "image-webpack-loader": "^3.3.1",
       "node-sass": "^4.5.3",
       "prettier": "^1.5.3",
+      "purify-css": "^1.2.5",
+      "purifycss-webpack": "^0.7.0",
       "sass-loader": "^6.0.6",
       "style-loader": "^0.18.2",
+      "uglifyjs-webpack-plugin": "^0.4.6",
       "webpack": "^3.5.2",
-      "webpack-dev-server": "^2.7.1",
-      "youtube-api-search": "^0.0.5"
+      "webpack-dev-server": "^2.7.1"
     },
     "dependencies": {
+      "bootstrap": "4.0.0-beta",
       "eslint-config-airbnb": "^15.1.0",
       "eslint-config-prettier": "^2.3.0",
       "eslint-friendly-formatter": "^3.0.0",
@@ -67,7 +70,6 @@ npm manifest:
       "react": "^15.6.1",
       "react-addons-perf": "^15.4.2",
       "react-dom": "^15.6.1",
-      "react-router-dom": "^4.1.2"
     }
   }
 
@@ -126,7 +128,7 @@ Lockfile:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.0.tgz#a296e17f7bfae7c1ce4f7e0de53d29cb32162df0"
   
-  ajv@^4.7.0, ajv@^4.9.1:
+  ajv@^4.11.2, ajv@^4.7.0, ajv@^4.9.1:
     version "4.11.8"
     resolved "https://registry.yarnpkg.com/ajv/-/ajv-4.11.8.tgz#82ffb02b29e662ae53bdc20af15947706739c536"
     dependencies:
@@ -339,6 +341,10 @@ Lockfile:
     version "0.4.0"
     resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   
+  atob@~1.1.0:
+    version "1.1.3"
+    resolved "https://registry.yarnpkg.com/atob/-/atob-1.1.3.tgz#95f13629b12c3a51a5d215abdce2aa9f32f80773"
+  
   autoprefixer@^6.3.1:
     version "6.7.7"
     resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-6.7.7.tgz#1dbd1c835658e35ce3f9984099db00585c782014"
@@ -400,7 +406,7 @@ Lockfile:
       slash "^1.0.0"
       source-map "^0.5.0"
   
-  babel-eslint@^7.1.1, babel-eslint@^7.2.3:
+  babel-eslint@^7.2.3:
     version "7.2.3"
     resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-7.2.3.tgz#b2fe2d80126470f5c19442dc757253a897710827"
     dependencies:
@@ -1089,6 +1095,10 @@ Lockfile:
     dependencies:
       hoek "2.x.x"
   
+  bootstrap@4.0.0-beta:
+    version "4.0.0-beta"
+    resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.tgz#dc5928175d2e71310bc668cf9e05a907211b72a6"
+  
   brace-expansion@^1.1.7:
     version "1.1.8"
     resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292"
@@ -1414,6 +1424,12 @@ Lockfile:
     dependencies:
       source-map "0.5.x"
   
+  clean-css@^4.0.12:
+    version "4.1.9"
+    resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.9.tgz#35cee8ae7687a49b98034f70de00c4edd3826301"
+    dependencies:
+      source-map "0.5.x"
+  
   clean-webpack-plugin@^0.1.16:
     version "0.1.16"
     resolved "https://registry.yarnpkg.com/clean-webpack-plugin/-/clean-webpack-plugin-0.1.16.tgz#422a8e150bf3d5abfd3d14bfacb070e80fb2e23f"
@@ -1642,6 +1658,10 @@ Lockfile:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.2.tgz#b7d113aee7a8dd27bd21133c4dc2529df1721eed"
   
+  convert-source-map@^0.3.3:
+    version "0.3.5"
+    resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-0.3.5.tgz#f1d802950af7dd2631a1febe0596550c86ab3190"
+  
   convert-source-map@^1.1.0, convert-source-map@^1.1.1:
     version "1.5.0"
     resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.0.tgz#9acd70851c6d5dfdd93d9282e5edf94a03ff46b5"
@@ -1786,6 +1806,15 @@ Lockfile:
   css-what@2.1:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.0.tgz#9467d032c38cfaefb9f2d79501253062f87fa1bd"
+  
+  css@^2.0.0:
+    version "2.2.1"
+    resolved "https://registry.yarnpkg.com/css/-/css-2.2.1.tgz#73a4c81de85db664d4ee674f7d47085e3b2d55dc"
+    dependencies:
+      inherits "^2.0.1"
+      source-map "^0.1.38"
+      source-map-resolve "^0.3.0"
+      urix "^0.1.0"
   
   cssesc@^0.1.0:
     version "0.1.0"
@@ -2394,7 +2423,7 @@ Lockfile:
     dependencies:
       eslint-restricted-globals "^0.1.1"
   
-  eslint-config-airbnb@^15.0.1, eslint-config-airbnb@^15.1.0:
+  eslint-config-airbnb@^15.1.0:
     version "15.1.0"
     resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-15.1.0.tgz#fd432965a906e30139001ba830f58f73aeddae8e"
     dependencies:
@@ -2405,13 +2434,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.3.0.tgz#b75b1eabea0c8b97b34403647ee25db349b9d8a0"
     dependencies:
       get-stdin "^5.0.1"
-  
-  eslint-config-shakacode@^15.0.0:
-    version "15.0.0"
-    resolved "https://registry.yarnpkg.com/eslint-config-shakacode/-/eslint-config-shakacode-15.0.0.tgz#186a6dd3b4e103aa5faaec8e771f865a10a6e55a"
-    dependencies:
-      babel-eslint "^7.1.1"
-      eslint-config-airbnb "^15.0.1"
   
   eslint-friendly-formatter@^3.0.0:
     version "3.0.0"
@@ -2446,6 +2468,12 @@ Lockfile:
     dependencies:
       debug "^2.6.8"
       pkg-dir "^1.0.0"
+  
+  eslint-plugin-flowtype@^2.35.0:
+    version "2.35.0"
+    resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.35.0.tgz#d17494f0ae8b727c632d8b9d4b4a848e7e0c04af"
+    dependencies:
+      lodash "^4.15.0"
   
   eslint-plugin-import@^2.7.0:
     version "2.7.0"
@@ -3118,7 +3146,7 @@ Lockfile:
       once "^1.3.0"
       path-is-absolute "^1.0.0"
   
-  glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.2, glob@~7.1.1:
+  glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@~7.1.1:
     version "7.1.2"
     resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
     dependencies:
@@ -4277,7 +4305,7 @@ Lockfile:
     version "3.10.1"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
   
-  lodash@^4, lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@~4.17.4:
+  lodash@^4, lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@~4.17.4:
     version "4.17.4"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
   
@@ -5438,6 +5466,23 @@ Lockfile:
     version "1.4.1"
     resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
   
+  purify-css@^1.2.5:
+    version "1.2.5"
+    resolved "https://registry.yarnpkg.com/purify-css/-/purify-css-1.2.5.tgz#c4b9ec90735765f3e247ba6a3b49f132f3482500"
+    dependencies:
+      clean-css "^4.0.12"
+      glob "^7.1.1"
+      rework "^1.0.1"
+      uglify-js "^3.0.6"
+      yargs "^8.0.1"
+  
+  purifycss-webpack@^0.7.0:
+    version "0.7.0"
+    resolved "https://registry.yarnpkg.com/purifycss-webpack/-/purifycss-webpack-0.7.0.tgz#07c9ce7988f608f1928102ed3ff19178ce38f0e0"
+    dependencies:
+      ajv "^4.11.2"
+      webpack-sources "^0.1.4"
+  
   q@^1.1.2:
     version "1.5.0"
     resolved "https://registry.yarnpkg.com/q/-/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
@@ -5794,6 +5839,10 @@ Lockfile:
     version "2.1.0"
     resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.1.0.tgz#e8358801b86b83b17560d4e3c382d7aef2100944"
   
+  resolve-url@~0.2.1:
+    version "0.2.1"
+    resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
+  
   resolve@^1.2.0:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.4.0.tgz#a75be01c53da25d934a98ebd0e4c4a7312f92a86"
@@ -5813,6 +5862,13 @@ Lockfile:
     dependencies:
       onetime "^2.0.0"
       signal-exit "^3.0.2"
+  
+  rework@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/rework/-/rework-1.0.1.tgz#30806a841342b54510aa4110850cd48534144aa7"
+    dependencies:
+      convert-source-map "^0.3.3"
+      css "^2.0.0"
   
   right-align@^0.1.1:
     version "0.1.3"
@@ -6150,7 +6206,7 @@ Lockfile:
     dependencies:
       is-plain-obj "^1.0.0"
   
-  source-list-map@^0.1.7:
+  source-list-map@^0.1.7, source-list-map@~0.1.7:
     version "0.1.8"
     resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
   
@@ -6158,15 +6214,34 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.0.tgz#aaa47403f7b245a92fbc97ea08f250d6087ed085"
   
+  source-map-resolve@^0.3.0:
+    version "0.3.1"
+    resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.3.1.tgz#610f6122a445b8dd51535a2a71b783dfc1248761"
+    dependencies:
+      atob "~1.1.0"
+      resolve-url "~0.2.1"
+      source-map-url "~0.3.0"
+      urix "~0.1.0"
+  
   source-map-support@^0.4.2:
     version "0.4.15"
     resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.15.tgz#03202df65c06d2bd8c7ec2362a193056fef8d3b1"
     dependencies:
       source-map "^0.5.6"
   
+  source-map-url@~0.3.0:
+    version "0.3.0"
+    resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.3.0.tgz#7ecaf13b57bcd09da8a40c5d269db33799d4aaf9"
+  
   source-map@0.5.x, source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@~0.5.1, source-map@~0.5.3:
     version "0.5.6"
     resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+  
+  source-map@^0.1.38:
+    version "0.1.43"
+    resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
+    dependencies:
+      amdefine ">=0.0.4"
   
   source-map@^0.4.2:
     version "0.4.4"
@@ -6657,6 +6732,13 @@ Lockfile:
     optionalDependencies:
       uglify-to-browserify "~1.0.0"
   
+  uglify-js@^3.0.6:
+    version "3.1.3"
+    resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.1.3.tgz#d61f0453b4718cab01581f3162aa90bab7520b42"
+    dependencies:
+      commander "~2.11.0"
+      source-map "~0.5.1"
+  
   uglify-to-browserify@~1.0.0:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
@@ -6717,6 +6799,10 @@ Lockfile:
   upper-case@^1.1.1:
     version "1.1.3"
     resolved "https://registry.yarnpkg.com/upper-case/-/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
+  
+  urix@^0.1.0, urix@~0.1.0:
+    version "0.1.0"
+    resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   
   url-parse-lax@^1.0.0:
     version "1.0.0"
@@ -6933,6 +7019,13 @@ Lockfile:
       supports-color "^3.1.1"
       webpack-dev-middleware "^1.11.0"
       yargs "^6.0.0"
+  
+  webpack-sources@^0.1.4:
+    version "0.1.5"
+    resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.1.5.tgz#aa1f3abf0f0d74db7111c40e500b84f966640750"
+    dependencies:
+      source-list-map "~0.1.7"
+      source-map "~0.5.3"
   
   webpack-sources@^1.0.1:
     version "1.0.1"
@@ -7172,7 +7265,7 @@ Lockfile:
       y18n "^3.2.1"
       yargs-parser "^5.0.0"
   
-  yargs@^8.0.2:
+  yargs@^8.0.1, yargs@^8.0.2:
     version "8.0.2"
     resolved "https://registry.yarnpkg.com/yargs/-/yargs-8.0.2.tgz#6299a9055b1cefc969ff7e79c1d918dceb22c360"
     dependencies:
@@ -7217,4 +7310,10 @@ Lockfile:
       axios "^0.7.0"
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'I:\Interfaces-React\node_modules\autoprefixer\node_modules\.bin'
+  SyntaxError: C:\Users\Ryzen_vega\Desktop\express-webpack\React-starter-boilerplate\package.json: Unexpected token } in JSON at position 1857
+      at JSON.parse (<anonymous>)
+      at C:\Users\Ryzen_vega\AppData\Roaming\npm\node_modules\yarn\lib\util\fs.js:554:57
+      at Generator.next (<anonymous>)
+      at step (C:\Users\Ryzen_vega\AppData\Roaming\npm\node_modules\yarn\node_modules\babel-runtime\helpers\asyncToGenerator.js:17:30)
+      at C:\Users\Ryzen_vega\AppData\Roaming\npm\node_modules\yarn\node_modules\babel-runtime\helpers\asyncToGenerator.js:28:13
+      at <anonymous>
