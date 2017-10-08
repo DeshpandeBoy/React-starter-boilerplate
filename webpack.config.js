@@ -40,7 +40,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/, // scss file types
+        test: /\.(scss|css|sass|less)$/, // scss file types
         use: cssConfig
       },
       {
